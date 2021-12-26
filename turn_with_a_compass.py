@@ -12,4 +12,3 @@ def direction(facing: str, turn: int):
     direction_degrees = dict(zip(directions, [0, 45, 90, 135, 180, 225, 270, 315]))
 
     return directions[(direction_degrees[facing] + turn) % 360 // 45]
-print(direction("H", 90))
