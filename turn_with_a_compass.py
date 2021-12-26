@@ -7,8 +7,9 @@ def direction(facing: str, turn: int):
     assert -1080 <= turn <= 1080 and turn % 45 == 0, "turn parameter must be in range [-1080, 1080] and multiple of 45" 
 
     directions = ("N", "NE", "E", "SE", "S", "SW", "W", "NW")
-    assert facing in directions, "facing parameter must one of the following: N, NE, E, SE, S, SW, W, NW"
+    assert facing in directions, f"facing parameter must one of the following: {directions}"
 
-    direction_degrees = dict(zip(directions, [0, 45, 135, 180, 225, 270, 315]))
+    direction_degrees = dict(zip(directions, [0, 45, 90, 135, 180, 225, 270, 315]))
 
     return directions[(direction_degrees[facing] + turn) % 360 // 45]
+print(direction("H", 90))
