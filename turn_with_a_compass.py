@@ -9,5 +9,4 @@ def direction(facing, turn):
         "W": 270,
         "NW": 315
     }
-    directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
-    return directions[(direction_degrees[facing] + turn) % 360 // 45]
+    return list(direction_degrees.keys())[(direction_degrees[facing] + turn) % 360 // 45]
